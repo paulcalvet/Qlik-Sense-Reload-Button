@@ -1,22 +1,23 @@
 /* Button design */
 .btn  {
-    font-weight: 600;
+    font-weight: 200;
     border: none;
     color: #fff;
-    background: #79bbff;
+    border-radius: 10px;
+    background: #26A0A7;
 	text-decoration: none;
-	font-family: Raleway, Arial, sans-serif;
+	font-family: Quiksand, sans-serif;
 	font-size: 20px;
-	padding-bottom: 20px;
-	padding-left: 40px;
-	padding-right: 40px;
-	padding-top: 20px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
 	display:inline-block;
 	margin: 2px;
 }
 
 .btn-primary  {
-    background: #79bbff;
+    background: #26A0A7;
 }
 
 .btn-danger  {
@@ -24,12 +25,13 @@
 }
 
 .btn-success  {
-    background: #449d44;;
+    background: #26A0A7;;
 }
 
 /* Modal design */
 #modal-content{
 	position:fixed;
+    border-radius: 10px;
 	top:30%;
 	left:30%;
 	width:30%;
@@ -53,7 +55,7 @@
 	color:#00f;
 	text-decoration:underline;
 }
- 
+
 .button-link:hover{
 	cursor:pointer;
 	color:#f00;
@@ -72,16 +74,17 @@
 
 #modal-message {
 	text-align: center;
+    padding-bottom: 20px;
 	font-size: 22px;
 	font-family: Raleway, Arial, sans-serif;
-	color: #79bbff;
+	color: #7B7A78;
 }
 
 #modal-checkbox {
 	text-align: center;
 	font-size: 20px;
 	font-family: Raleway, Arial, sans-serif;
-	color: #79bbff;
+	color: #7B7A78;
 	margin: 30px;
 }
 
@@ -139,21 +142,21 @@ input[type=radio], input[type=checkbox] {
 }
 
 input[type=checkbox] + label:before {
-    content: "";  
-    display: inline-block;  
-    width: 15px;  
-    height: 15px;  
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
     vertical-align:middle;
-    margin-right: 8px;  
-    background-color: #aaa;  
+    margin-right: 8px;
+    background-color: #aaa;
     box-shadow: inset 0px 2px 2px rgba(0, 0, 0, .3);
-    border-radius: 4px;  
+    border-radius: 4px;
 }
 
 input[type=radio]:checked + label:before {
     content: "\2022"; /* Bullet */
     color:white;
-    background-color: #666; 
+    background-color: #666;
     font-size:1.8em;
     text-align:center;
     line-height:14px;
@@ -162,9 +165,12 @@ input[type=radio]:checked + label:before {
 input[type=checkbox]:checked + label:before {
     content:"\2714"; /* Tick */
     color:white;
-    background-color: #666; 
+    background-color: #666;
     text-align:center;
     line-height:15px;
     text-shadow:0px 0px 3px #eee;
 }
 
+#GetParameters {
+    padding-bottom: 20px;
+}
