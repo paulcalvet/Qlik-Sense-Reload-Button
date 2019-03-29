@@ -1,18 +1,38 @@
 Reload Button for Qlik Sense
 
-## Updated
-2015/10/01
-- Added "Partial Reload" function
-- UI was renewed
+1. Send parameters to Python SSE extension
+2. Python update a database
+3. Reload (full or partial) the Qlik Sense application
 
-2017/05/11
-- Fixed to be able to execute reloads on QS3.2 SR3
-====
-The **Reload Button for Qlik Sense** is an extension which allows you to execute road script by pressing a button placed on a Qlik Sense sheet.
+## Process
+
+![Alt text](./images/Process.png)
+
+
+## Extension properties
+
+![Alt text](./images/Accordion.png)
+
+1. Query Parameters 
+
+2. SSE Function
+   - Function SSE
+
+3. Message
+   - Confirmation message
+   - Success message
+   - Failed message
+
+4. Reload Option
+   - Partial or full reload
+
+5. Reload Button
+   - Button text
+   - Button color
 
 ## Demo
 
-![Alt text](./images/demo.png)
+
 
 ## Install
 1. Qlik Sense Desktop
@@ -43,4 +63,4 @@ You can allow published apps to be reloaded and saved by adding a security rule 
 The software is provided "AS IS" without warranty of any kind. This project is licensed under the terms of the MIT license.
 
 ## Author
-Masaki Hamano
+Paul Calvet / forked from mhamano/Qlik-Sense-Reload-Button
