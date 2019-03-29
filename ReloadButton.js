@@ -136,8 +136,6 @@ define(["jquery", "qlik", "text!./lib/css/reload_btn.css"], function($, qlik, cs
             }
         },
 
-
-
         paint: function ($element, layout) {
         var app = qlik.currApp(this);
 
@@ -179,7 +177,6 @@ define(["jquery", "qlik", "text!./lib/css/reload_btn.css"], function($, qlik, cs
                         });
                     });
 
-
 				// Execute reload
 				$("#execute-reload").click(function(event) {
 
@@ -187,16 +184,12 @@ define(["jquery", "qlik", "text!./lib/css/reload_btn.css"], function($, qlik, cs
 
 					// Check if reload is partial
 					var isPartial = layout.myproperties.border;
-					//if($("#partial").prop('checked')) {
-					//	isPartial = true;
-					//}
 
 					// Remove modal
 					$("#modal-content").remove();
 
 					// Open loader circle
 					$("#modal-overlay").append('<div id="loader" class="loader">Loading...</div>');
-
 
 
                     app.createCube({
@@ -239,13 +232,12 @@ define(["jquery", "qlik", "text!./lib/css/reload_btn.css"], function($, qlik, cs
 
                         var output = reply.qHyperCube.qDataPages[0].qMatrix[0][0].qText;
                         app.destroySessionObject(reply.qInfo.qId);
-                        // Condition OK, on recharge les données dasn Qlik
+                        // Condition OK, Load Data in Qlik Sense
                         if (output == 0) {
                             app.doReload( 0, isPartial, false).then(function(e) {
                                 $("#loader").remove();
                                 if(e) {
                                     app.doSave();
-
                                     $("#modal-overlay").append('<div id="modal-content" style="display:none"><div id="modal-message"><h2>'+layout.props.section2.item2+'</h2></div><br><div id="modal-checkbox"><a href="#" id="modal-close" class="btn btn-success">Close</a></div></div>');
                                 } else {
 
@@ -254,7 +246,7 @@ define(["jquery", "qlik", "text!./lib/css/reload_btn.css"], function($, qlik, cs
                                 $("#modal-content").fadeIn("slow");
                             })
 
-                        // Condition KO, on ne charge pas les données dans Qlik
+                        // Condition KO, failed
                         } else {
 
                             $("#modal-overlay").append('<div id="modal-content" style="display:none"><div id="modal-message"><h2>Reload failed!</h2></div><br><div id="modal-checkbox"><a href="#" id="modal-close" class="btn btn-danger">Close</a></div></div>');
